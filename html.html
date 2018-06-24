@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+     <head>
+     	<title>Quiz</title>
+     	<link href="http://fonts.googleapis.com/css?family=Roboto+Slab" ref="stylesheet"> 
+     	<link href="quiz.css" rel="stylesheet">
+     </head>
+     <body>
+     	
+     	<div id="quizContainer" class="container">
+     		<div class="title">Computer Quiz</div>
+     		<div id="quoestion" class="quoestion" style="color: #FFF"></div>
+     		<label class="option"><input type="radio" name="option" value="1" style="color: #000" /> <span id="opt1"></span></label>
+     		<label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
+     		<label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
+     		<label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
+     		
+     		<button id="nextButton" class="next-btn" onclick="loadNextQuoestion();">Next Quoestion</button>
+     	</div>
+     	<div id="result" class="container result" style="display:none;">
+     	
+     	</div>
+<br>
+<br>
+<br>
+     	<div class="timer">Time left = <span id="timer"></span></div>
+     	<script src="quoestion1.js"></script>
+     	<script src="quiz-script.js"></script>
+     	<script src="timer.js"></script>
+     	
+     </body>
+     
+     </html>
+
+
+
+
+
