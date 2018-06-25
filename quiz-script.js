@@ -1,10 +1,10 @@
-var currentQuoestion = 0;
+var currentQuestion = 0;
 var score = 0;
-var totQuoestions = quoestion.length;
+var totQuestions = question.length;
 var f=0;
 
 var container = document.getElementById('quizContainer');
-var quoestionE1 = document.getElementById('quoestion');
+var questionE1 = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
 var opt2 = document.getElementById('opt2');
 var opt3 = document.getElementById('opt3');
@@ -14,31 +14,31 @@ var tq=document.getElementById('thank');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
 
-function loadQuoestion (quoestionIndex) {
-	var q = quoestion[quoestionIndex];
-	quoestionE1.textContent = (quoestionIndex + 1) + '.' + q.quoestion;
+function loadQuestion (questionIndex) {
+	var q = question[questionIndex];
+	questionE1.textContent = (questionIndex + 1) + '.' + q.question;
 	opt1.textContent = q.option1;
 	opt2.textContent = q.option2;
 	opt3.textContent = q.option3;
 	opt4.textContent = q.option4;
 };
 
-function loadNextQuoestion () {
+function loadNextQuestion () {
 	var selectedOption = document.querySelector('input[type=radio]:checked');
 	if(!selectedOption){
 		 alert('please selected Option');
 		return;
 	}
 	var answer = selectedOption.value;
-	if(quoestion[currentQuoestion].answer == answer){
+	if(question[currentQuestion].answer == answer){
 		score += 10;
 	}
 	selectedOption.checked = false;         
-	currentQuoestion++;
-	if(currentQuoestion == totQuoestions - 1){
+	currentQuestion++;
+	if(currentQuestion == totQuestions - 1){
 		nextButton.textContent = 'Finish';
 	}
-	if(currentQuoestion == totQuoestions){
+	if(currentQuestion == totQuestions){
 		container.style.display ='none';
 		resultCont.style.display = '';
 
@@ -48,10 +48,10 @@ function loadNextQuoestion () {
 		f=1;
         return;
 		}
-		loadQuoestion(currentQuoestion);
+		loadQuestion(currentQuestion);
 	}
 
-	loadQuoestion(currentQuoestion);
+	loadQuestion(currentQuestion);
 
 
 
